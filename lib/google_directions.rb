@@ -8,7 +8,7 @@ class GoogleDirections
 
   attr_reader :status, :doc, :xml, :origin, :destination, :options
 
-  @@base_url = 'http://maps.googleapis.com/maps/api/directions/xml'
+  @@base_url = 'https://maps.googleapis.com/maps/api/directions/xml'
 
   @@default_options = {
     :language => :en,
@@ -74,7 +74,7 @@ class GoogleDirections
   end
 
   def public_url
-    "http://maps.google.com/maps?saddr=#{transcribe(@origin)}&daddr=#{transcribe(@destination)}&hl=#{@options[:language]}&ie=UTF8"
+    "https://maps.google.com/maps?saddr=#{transcribe(@origin)}&daddr=#{transcribe(@destination)}&hl=#{@options[:language]}&ie=UTF8"
   end
 
   def steps
